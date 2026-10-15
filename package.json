@@ -1,0 +1,11 @@
+{
+  "name": "hyperclip",
+  "version": "1.0.0",
+  "description": "Chrome extension that adds copy-link buttons to supported websites.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "icons": "node dev-scripts/generate-icons.js",
+    "publish": "node dev-scripts/publish.js"
+  }
+}

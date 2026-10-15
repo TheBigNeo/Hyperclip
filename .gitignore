@@ -1,0 +1,18 @@
+# Build output (npm run publish)
+publish/
+*.zip
+
+# Dependencies (none today, but keep them out if they ever appear)
+node_modules/
+
+# IDE settings (WebStorm / JetBrains, VS Code)
+.idea/
+.vscode/
+
+# Local tooling
+.playwright-mcp/
+.claude/settings.local.json
+
+# OS files
+.DS_Store
+Thumbs.db
