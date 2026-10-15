@@ -1,0 +1,54 @@
+/* The issue / PR number that copies on click (marked by scripts/sites/github.js) */
+[data-hyperclip-number] {
+  cursor: pointer;
+}
+
+[data-hyperclip-number]:hover {
+  text-decoration: underline;
+}
+
+/* "Copied" feedback. Colors come from GitHub's Primer variables, so it follows light/dark mode.
+   The variables are defined by github.com, not in this file, hence the suppressed inspection. */
+/* noinspection CssUnresolvedCustomProperty */
+.hyperclip-toast {
+  position: fixed;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  font: 600 12px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  white-space: nowrap;
+  color: var(--fgColor-onEmphasis, #fff);
+  background: var(--bgColor-emphasis, #25292e);
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 6px 16px rgba(1, 4, 9, 0.35);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.hyperclip-toast[data-placement="above"] {
+  transform: translateY(4px);
+}
+
+.hyperclip-toast[data-visible] {
+  opacity: 1;
+  transform: none;
+}
+
+.hyperclip-toast-icon {
+  font-weight: 700;
+  color: #3fb950;
+}
+
+.hyperclip-toast[data-state="fail"] .hyperclip-toast-icon {
+  color: #ff7b72;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hyperclip-toast {
+    transition: none;
+  }
+}
